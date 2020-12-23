@@ -9,8 +9,9 @@ class WebScrape():
         self.parsed_page = None
     
     def parsePage(self):
+        headers = {'User-Agent': 'Mozilla/5.0'}
         # Starts the scraper
-        uClient2 = requests.get(self.url)
+        uClient2 = requests.get(self.url, headers=headers)
         html_page = uClient2.text
         uClient2.close()
 
